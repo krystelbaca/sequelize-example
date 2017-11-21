@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+.idea/
+config/
+migrations/
+models/
+package-lock.json
+package.json
+seeders/
+server.js
