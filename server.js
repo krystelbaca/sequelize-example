@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
-/*const passport = require('passport')
+const passport = require('passport')
 const session = require('express-session')
-const bodyParser = require('body-parser')*/
+const bodyParser = require('body-parser')
+const env = require('dotenv').load();
 
 app.get('/', function(req, res) {
     res.send('hello')
@@ -14,8 +15,9 @@ app.listen(5000, function(err) {
     else console.log(err)
 })
 
-/*app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// body-parser
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 // For Passport
 
@@ -26,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 //Models
-var models = require("index.js");
+var models = require("user.js");
 
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -37,4 +39,4 @@ models.sequelize.sync().then(function() {
 
     console.log(err, "Something went wrong with the Database Update!")
 
-});*/
+});
